@@ -1,0 +1,17 @@
+{
+  "cycle_id": "ciclo_1",
+  "data_version": "v1",
+  "data_hora": "2026-11-11T11:29:18+00:00",
+  "desafiante": {
+    "algoritmo": "RandomForestRegressor",
+    "run_id": "9e21e32402134abdac2e168338ede756",
+    "val_mae": 77.77756485272602
+  },
+  "vigente_anterior": null,
+  "decisao": "PROMOVIDO",
+  "motivo": "Não havia modelo vigente: vencedor do ciclo promovido diretamente.",
+  "melhoria": null,
+  "run_id_decisao": "7cd50b3d022a417c9dcc0ac3bd216bf6",
+  "manifesto_vigente": "ciclo_1__RandomForestRegressor",
+  "metricas_vigente_anterior": null
+}

@@ -1,0 +1,70 @@
+{
+  "antes": {
+    "linhas": 13003,
+    "periodo": [
+      "2011-01-01",
+      "2012-06-30"
+    ],
+    "ausentes": {},
+    "total_ausentes": 0,
+    "duplicatas_chave": 0,
+    "duplicatas_linha": 0,
+    "fora_do_dominio": {},
+    "umidade_zero": 22,
+    "inconsistencia_casual_registered": 0,
+    "inconsistencia_workingday": 0,
+    "outliers_iqr": {
+      "cnt": 406,
+      "windspeed": 87,
+      "hum": 0,
+      "temp": 0
+    },
+    "horas_esperadas": 13128,
+    "horas_ausentes_no_periodo": 125
+  },
+  "depois": {
+    "linhas": 13003,
+    "periodo": [
+      "2011-01-01",
+      "2012-06-30"
+    ],
+    "ausentes": {
+      "hum": 22,
+      "temp_hum_interaction": 22
+    },
+    "total_ausentes": 44,
+    "duplicatas_chave": 0,
+    "duplicatas_linha": 0,
+    "fora_do_dominio": {},
+    "umidade_zero": 0,
+    "inconsistencia_casual_registered": null,
+    "inconsistencia_workingday": 0,
+    "outliers_iqr": {
+      "cnt": 406,
+      "windspeed": 87,
+      "hum": 0,
+      "temp": 0
+    },
+    "horas_esperadas": 13128,
+    "horas_ausentes_no_periodo": 125
+  },
+  "acoes": {
+    "colunas_removidas_vazamento": [
+      "instant",
+      "casual",
+      "registered"
+    ],
+    "duplicatas_removidas": 0,
+    "fora_do_dominio_para_nan": {},
+    "umidade_zero_para_nan": 22,
+    "linhas_sem_alvo_removidas": 0
+  },
+  "incorporacao": {
+    "linhas_por_lote": {
+      "lote_1.csv": 13003
+    },
+    "linhas_concatenadas": 13003,
+    "duplicatas_chave_removidas": 0,
+    "linhas_consolidadas": 13003
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "eleitas": [
+    "is_rush_hour",
+    "hr_sin",
+    "hr_cos",
+    "atemp",
+    "temp",
+    "hum",
+    "season",
+    "weathersit",
+    "hr",
+    "temp_hum_interaction",
+    "workingday",
+    "yr",
+    "mnth_cos"
+  ]
+}

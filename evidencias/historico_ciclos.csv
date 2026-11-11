@@ -1,0 +1,2 @@
+cycle_id,data_version,gatilho,linhas,n_features_eleitas,features_eleitas,val_mae_RandomForestRegressor,val_mae_Ridge,vencedor_ciclo,decisao,vigente_val_mae,melhoria,teste_mae_vigente,modelo_vigente
+ciclo_1,v1,workflow_dispatch,13003.0,13.0,"is_rush_hour,hr_sin,hr_cos,atemp,temp,hum,season,weathersit,hr,temp_hum_interaction,workingday,yr,mnth_cos",77.77756485272602,98.83529129532634,RandomForestRegressor,PROMOVIDO,,,69.45925487251422,ciclo_1__RandomForestRegressor

@@ -1,0 +1,44 @@
+artifact_path: file:///home/runner/work/bsd/bsd/mlartifacts/models/m-4706b1539a4240e19a270e380f7e29a1/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.skops
+    predict_fn: predict
+    python_version: 3.12.16
+  sklearn:
+    code: null
+    pickled_model: model.skops
+    serialization_format: skops
+    sklearn_version: 1.9.1
+    skops_trusted_types:
+    - numpy.dtype
+    - sklearn.tree._tree.Tree
+is_signature_from_type_hint: false
+mlflow_version: 3.18.0
+model_id: m-4706b1539a4240e19a270e380f7e29a1
+model_size_bytes: 15097117
+model_uuid: m-4706b1539a4240e19a270e380f7e29a1
+prompts: null
+run_id: 9e21e32402134abdac2e168338ede756
+saved_input_example_info:
+  artifact_path: input_example.json
+  pandas_orient: split
+  serving_input_path: serving_input_example.json
+  type: dataframe
+signature:
+  inputs: '[{"type": "long", "name": "is_rush_hour", "required": true}, {"type": "double",
+    "name": "hr_sin", "required": true}, {"type": "double", "name": "hr_cos", "required":
+    true}, {"type": "double", "name": "atemp", "required": true}, {"type": "double",
+    "name": "temp", "required": true}, {"type": "double", "name": "hum", "required":
+    true}, {"type": "long", "name": "season", "required": true}, {"type": "long",
+    "name": "weathersit", "required": true}, {"type": "long", "name": "hr", "required":
+    true}, {"type": "double", "name": "temp_hum_interaction", "required": true}, {"type":
+    "long", "name": "workingday", "required": true}, {"type": "long", "name": "yr",
+    "required": true}, {"type": "double", "name": "mnth_cos", "required": true}]'
+  outputs: '[{"type": "double", "required": true}]'
+  params: null
+type_hint_from_example: false
+utc_time_created: '2026-11-11 11:28:56.486102'

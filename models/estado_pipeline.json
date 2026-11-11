@@ -1,0 +1,19 @@
+{
+  "execucoes": 1,
+  "lotes_incorporados": [
+    "lote_1.csv"
+  ],
+  "historico": [
+    {
+      "cycle_id": "ciclo_1",
+      "data_version": "v1",
+      "lote_novo": "lote_1.csv",
+      "decisao": "PROMOVIDO",
+      "vencedor_ciclo": "RandomForestRegressor",
+      "modelo_vigente": "ciclo_1__RandomForestRegressor",
+      "gatilho": "workflow_dispatch",
+      "github_run_id": "43012084623",
+      "concluido_em": "2026-11-11T11:29:18+00:00"
+    }
+  ]
+}
