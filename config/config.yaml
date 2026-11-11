@@ -1,0 +1,144 @@
+# =============================================================================
+# Trabalho N3 - Análise Preditiva (MLOps)
+# Configuração única do pipeline. Todas as regras abaixo são definidas ANTES
+# do treinamento e lidas pelos notebooks / módulos de src/.
+# =============================================================================
+
+projeto:
+  nome: bike-sharing-mlops
+  experimento_mlflow: n3_bike_sharing_demanda
+  seed: 42
+
+# -----------------------------------------------------------------------------
+# Etapa 1 - Problema e dados
+# -----------------------------------------------------------------------------
+dados:
+  fonte: "UCI Machine Learning Repository - Bike Sharing Dataset (hour.csv)"
+  licenca: "CC BY 4.0"
+  url: "https://archive.ics.uci.edu/dataset/275/bike+sharing+dataset"
+  tipo_problema: regressao
+  unidade_observacao: "1 hora de operação do sistema Capital Bikeshare (Washington D.C.)"
+  dir_raw: data/raw
+  dir_processed: data/processed
+  # Ordem de chegada simulada: cada execução do pipeline incorpora o próximo
+  # lote ainda não processado (registrado em models/estado_pipeline.json).
+  lotes:
+    - arquivo: lote_1.csv
+      data_version: v1
+      periodo: "2011-01-01 a 2012-06-30"
+    - arquivo: lote_2.csv
+      data_version: v2
+      periodo: "2012-07-01 a 2012-10-31"
+  # Conjunto reservado: usado SOMENTE no notebook 05 (avaliação final/previsões).
+  teste_final: teste_final.csv
+  chave: [dteday, hr]
+  coluna_data: dteday
+  alvo: cnt
+  # Removidas para evitar vazamento: instant é ID sequencial e
+  # casual + registered = cnt (decompõem o próprio alvo).
+  colunas_vazamento: [instant, casual, registered]
+  # Domínios válidos usados na validação de inconsistências do ETL
+  dominios:
+    season: [1, 4]
+    yr: [0, 1]
+    mnth: [1, 12]
+    hr: [0, 23]
+    holiday: [0, 1]
+    weekday: [0, 6]
+    workingday: [0, 1]
+    weathersit: [1, 4]
+    temp: [0.0, 1.0]
+    atemp: [0.0, 1.0]
+    hum: [0.0, 1.0]
+    windspeed: [0.0, 1.0]
+
+# -----------------------------------------------------------------------------
+# Etapa 2 - Atributos
+# -----------------------------------------------------------------------------
+features:
+  originais: [season, yr, mnth, hr, holiday, weekday, workingday, weathersit,
+              temp, atemp, hum, windspeed]
+  engenharia: [hr_sin, hr_cos, mnth_sin, mnth_cos, is_rush_hour, is_weekend,
+               temp_diff, temp_hum_interaction]
+  horas_pico: [7, 8, 9, 17, 18, 19]
+  dias_fim_semana: [0, 6]        # weekday: 0 = domingo, 6 = sábado
+
+# -----------------------------------------------------------------------------
+# Protocolo de avaliação interno do ciclo (sem shuffle)
+# -----------------------------------------------------------------------------
+validacao:
+  tipo: holdout_temporal
+  fracao_validacao: 0.20         # últimos 20% cronológicos do ciclo ativo
+
+# -----------------------------------------------------------------------------
+# Etapa 3 - Seleção e votação de features (definida antes da comparação)
+# -----------------------------------------------------------------------------
+votacao:
+  metodo: "maioria (>= 2 de 3 votos) + completar por ranking médio ponderado"
+  k: 12                          # top-k de cada método
+  min_votos: 2
+  min_features: 8
+  pesos_ranking:
+    selectkbest: 1.0
+    random_forest: 1.0
+    rfe: 1.0
+  metodos:
+    selectkbest:
+      score_func: f_regression
+    random_forest:
+      n_estimators: 100
+      random_state: 42
+      n_jobs: -1
+    rfe:
+      estimador: Ridge
+      alpha: 1.0
+      random_state: 42
+
+# -----------------------------------------------------------------------------
+# Etapa 4 - Algoritmos concorrentes (mesmas features, mesmo protocolo)
+# -----------------------------------------------------------------------------
+modelos:
+  modelo_a:
+    algoritmo: Ridge
+    params:
+      alpha: 1.0
+      random_state: 42
+  modelo_b:
+    algoritmo: RandomForestRegressor
+    # Complexidade limitada de propósito: o histórico do MLflow é versionado
+    # no Git a cada ciclo; 100 árvores / profundidade 14 / folha >= 5 reduz o
+    # artefato de ~37 MB para ~13 MB com perda pequena de MAE (ver README).
+    params:
+      n_estimators: 100
+      max_depth: 14
+      min_samples_leaf: 5
+      n_jobs: -1
+      random_state: 42
+
+metrica:
+  principal: mae
+  direcao: minimize
+  secundarias: [rmse, r2]
+
+# -----------------------------------------------------------------------------
+# Etapa 5 - Regra de promoção
+# O vencedor do ciclo só substitui o vigente se:
+#   MAE_vigente - MAE_desafiante >= promotion_threshold
+# (ambos avaliados sobre a MESMA validação temporal do ciclo atual).
+# -----------------------------------------------------------------------------
+promocao:
+  promotion_threshold: 0.5
+  tipo_limiar: absoluto          # em bicicletas/hora
+
+# -----------------------------------------------------------------------------
+# Critério 10 - Inovação incremental
+# -----------------------------------------------------------------------------
+monitoramento:
+  drift:
+    variaveis: [temp, atemp, hum, windspeed, cnt]
+    ks_alpha: 0.05
+    psi_bins: 10
+    psi_alerta: 0.2              # PSI > 0.2 = mudança significativa
+  shap:
+    amostra: 500
+    random_state: 42

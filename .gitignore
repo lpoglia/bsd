@@ -1,0 +1,26 @@
+# Ambientes e caches
+.venv/
+venv/
+env/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Segredos (nunca versionar)
+.env
+*.pem
+*.key
+
+# Intermediários do ciclo (regenerados a cada execução)
+data/processed/*
+!data/processed/.gitkeep
+evidencias/_execucao_atual/
+
+# IDE / SO
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Versionados de propósito (estado persistente do pipeline):
+#   mlflow.db, mlartifacts/, models/, evidencias/
