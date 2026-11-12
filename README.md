@@ -13,7 +13,7 @@ Projeto integrador de **Análise Preditiva** (Católica de Santa Catarina): um *
 | **Promoção** | Vencedor substitui o vigente só se `MAE_vigente − MAE_desafiante ≥ 0,5` na mesma validação |
 | **Inovação (critério 10)** | Monitoramento de **data drift** (KS + PSI) com alerta e **explicabilidade SHAP** do vencedor |
 
-> Integrantes: _preencher_
+**Integrantes:** Leonardo Heitor Poglia · Caio Henrique Ramos · Lucas Antonio Biazzi · Enzo Coelho Rossa
 
 ---
 
