@@ -1,5 +1,5 @@
 {
-  "modelo_id": "ciclo_1__RandomForestRegressor",
+  "modelo_id": "ciclo_2__RandomForestRegressor",
   "algoritmo": "RandomForestRegressor",
   "params": {
     "n_estimators": 100,
@@ -8,46 +8,47 @@
     "n_jobs": -1,
     "random_state": 42
   },
-  "cycle_id": "ciclo_1",
-  "data_version": "v1",
+  "cycle_id": "ciclo_2",
+  "data_version": "v2",
   "lotes_treino": [
-    "lote_1.csv"
+    "lote_1.csv",
+    "lote_2.csv"
   ],
   "features": [
     "is_rush_hour",
     "hr_sin",
-    "hr_cos",
     "atemp",
     "temp",
+    "hr_cos",
+    "yr",
     "hum",
-    "season",
     "weathersit",
     "hr",
     "temp_hum_interaction",
+    "season",
     "workingday",
-    "yr",
     "mnth_cos"
   ],
   "metrica": {
     "nome": "mae",
     "direcao": "minimize",
-    "valor_validacao": 77.77756485272602,
-    "base": "validação temporal (últimos 20%) do ciclo_1"
+    "valor_validacao": 51.623846206117484,
+    "base": "validação temporal (últimos 20%) do ciclo_2"
   },
   "mlflow": {
     "experimento": "n3_bike_sharing_demanda",
-    "run_id_treino": "9e21e32402134abdac2e168338ede756",
-    "run_id_votacao": "921194df3e184cdb8119a9df83ed83dc",
-    "run_id_decisao": "7cd50b3d022a417c9dcc0ac3bd216bf6"
+    "run_id_treino": "0d4196c461a543d2b7762e5f8c238e92",
+    "run_id_votacao": "013fe6ca59c14cebb654909340d6c2f1",
+    "run_id_decisao": "9400aba6b6cb4df085a70d1a05ec28c8"
   },
-  "arquivo_modelo": "models/registro/ciclo_1__RandomForestRegressor.joblib",
-  "sha256_modelo": "bfb3f6a8cbe3bfd51297adb37df4fde0b9734603e3dbfc8b05ec5bf5719f812b",
-  "promovido_em": "2026-11-11T11:29:18+00:00",
+  "arquivo_modelo": "models/registro/ciclo_2__RandomForestRegressor.joblib",
+  "sha256_modelo": "eb91dcffc12c5d66b8d427b49324bf46a98ff952c4c52da349dcb029f0f2d70d",
+  "promovido_em": "2026-11-12T02:17:39+00:00",
   "ultima_avaliacao": {
-    "cycle_id": "ciclo_1",
-    "data_version": "v1",
+    "cycle_id": "ciclo_2",
+    "data_version": "v2",
     "decisao": "PROMOVIDO",
-    "data_hora": "2026-11-11T11:29:18+00:00"
+    "data_hora": "2026-11-12T02:17:39+00:00"
   },
   "historico_decisoes": [
     {
@@ -64,6 +65,24 @@
       "motivo": "Não havia modelo vigente: vencedor do ciclo promovido diretamente.",
       "melhoria": null,
       "run_id_decisao": "7cd50b3d022a417c9dcc0ac3bd216bf6"
+    },
+    {
+      "cycle_id": "ciclo_2",
+      "data_version": "v2",
+      "data_hora": "2026-11-12T02:17:39+00:00",
+      "desafiante": {
+        "algoritmo": "RandomForestRegressor",
+        "run_id": "0d4196c461a543d2b7762e5f8c238e92",
+        "val_mae": 51.623846206117484
+      },
+      "vigente_anterior": {
+        "modelo_id": "ciclo_1__RandomForestRegressor",
+        "val_mae_no_ciclo": 97.98795056472736
+      },
+      "decisao": "PROMOVIDO",
+      "motivo": "Melhoria de 46.3641 >= limiar 0.5 (vigente=97.9880, desafiante=51.6238).",
+      "melhoria": 46.36410435860987,
+      "run_id_decisao": "9400aba6b6cb4df085a70d1a05ec28c8"
     }
   ]
 }

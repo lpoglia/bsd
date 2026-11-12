@@ -1,0 +1,16 @@
+{
+  "ciclo_anterior": "ciclo_1",
+  "ciclo_atual": "ciclo_2",
+  "data_version": [
+    "v1",
+    "v2"
+  ],
+  "linhas_treino": [
+    10402,
+    12735
+  ],
+  "features_entraram": [],
+  "features_sairam": [],
+  "decisao": "PROMOVIDO",
+  "modelo_vigente": "ciclo_2__RandomForestRegressor"
+}
