@@ -1,0 +1,24 @@
+{
+  "cycle_id": "ciclo_4",
+  "data_version": "v2",
+  "data_hora": "2026-11-13T01:51:12+00:00",
+  "desafiante": {
+    "algoritmo": "RandomForestRegressor",
+    "run_id": "63bbfa6b84d94a9c8cdd713888bdca30",
+    "val_mae": 51.62384620611748
+  },
+  "vigente_anterior": {
+    "modelo_id": "ciclo_2__RandomForestRegressor",
+    "val_mae_no_ciclo": 51.6238462061175
+  },
+  "decisao": "MANTIDO",
+  "motivo": "Melhoria de 0.0000 < limiar 0.5 (vigente=51.6238, desafiante=51.6238).",
+  "melhoria": 2.1316282072803006e-14,
+  "run_id_decisao": "0b52a2f135114e4c92e89ffd392b4ab5",
+  "manifesto_vigente": "ciclo_2__RandomForestRegressor",
+  "metricas_vigente_anterior": {
+    "mae": 51.6238462061175,
+    "rmse": 79.4654469588072,
+    "r2": 0.8811594451945987
+  }
+}
