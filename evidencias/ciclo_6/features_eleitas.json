@@ -1,0 +1,32 @@
+{
+  "cycle_id": "ciclo_6",
+  "data_version": "v2",
+  "features_eleitas": [
+    "is_rush_hour",
+    "hr_sin",
+    "atemp",
+    "temp",
+    "hr_cos",
+    "yr",
+    "hum",
+    "weathersit",
+    "hr",
+    "temp_hum_interaction",
+    "season",
+    "workingday",
+    "mnth_cos"
+  ],
+  "particao": {
+    "treino": [
+      "2011-01-01",
+      "2012-06-19",
+      12735
+    ],
+    "validacao": [
+      "2012-06-19",
+      "2012-10-31",
+      3184
+    ]
+  },
+  "run_id_votacao": "e9a8073ac33341d79ed4e5abfbe2041e"
+}

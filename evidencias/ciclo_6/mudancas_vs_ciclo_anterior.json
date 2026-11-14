@@ -1,0 +1,16 @@
+{
+  "ciclo_anterior": "ciclo_5",
+  "ciclo_atual": "ciclo_6",
+  "data_version": [
+    "v2",
+    "v2"
+  ],
+  "linhas_treino": [
+    12735,
+    12735
+  ],
+  "features_entraram": [],
+  "features_sairam": [],
+  "decisao": "MANTIDO",
+  "modelo_vigente": "ciclo_2__RandomForestRegressor"
+}
