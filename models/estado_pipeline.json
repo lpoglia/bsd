@@ -1,5 +1,5 @@
 {
-  "execucoes": 10,
+  "execucoes": 11,
   "lotes_incorporados": [
     "lote_1.csv",
     "lote_2.csv"
@@ -114,6 +114,17 @@
       "gatilho": "schedule",
       "github_run_id": "43783660469",
       "concluido_em": "2026-11-16T01:02:02+00:00"
+    },
+    {
+      "cycle_id": "ciclo_11",
+      "data_version": "v2",
+      "lote_novo": null,
+      "decisao": "MANTIDO",
+      "vencedor_ciclo": "RandomForestRegressor",
+      "modelo_vigente": "ciclo_2__RandomForestRegressor",
+      "gatilho": "schedule",
+      "github_run_id": "43940874737",
+      "concluido_em": "2026-11-16T19:37:04+00:00"
     }
   ]
 }
