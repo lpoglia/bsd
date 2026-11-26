@@ -1,0 +1,592 @@
+{
+  "modelo_id": "ciclo_2__RandomForestRegressor",
+  "algoritmo": "RandomForestRegressor",
+  "params": {
+    "n_estimators": 100,
+    "max_depth": 14,
+    "min_samples_leaf": 5,
+    "n_jobs": -1,
+    "random_state": 42
+  },
+  "cycle_id": "ciclo_2",
+  "data_version": "v2",
+  "lotes_treino": [
+    "lote_1.csv",
+    "lote_2.csv"
+  ],
+  "features": [
+    "is_rush_hour",
+    "hr_sin",
+    "atemp",
+    "temp",
+    "hr_cos",
+    "yr",
+    "hum",
+    "weathersit",
+    "hr",
+    "temp_hum_interaction",
+    "season",
+    "workingday",
+    "mnth_cos"
+  ],
+  "metrica": {
+    "nome": "mae",
+    "direcao": "minimize",
+    "valor_validacao": 51.623846206117484,
+    "base": "valida\u00e7\u00e3o temporal (\u00faltimos 20%) do ciclo_2"
+  },
+  "mlflow": {
+    "experimento": "n3_bike_sharing_demanda",
+    "run_id_treino": "0d4196c461a543d2b7762e5f8c238e92",
+    "run_id_votacao": "013fe6ca59c14cebb654909340d6c2f1",
+    "run_id_decisao": "9400aba6b6cb4df085a70d1a05ec28c8"
+  },
+  "arquivo_modelo": "models/registro/ciclo_2__RandomForestRegressor.joblib",
+  "sha256_modelo": "eb91dcffc12c5d66b8d427b49324bf46a98ff952c4c52da349dcb029f0f2d70d",
+  "promovido_em": "2026-11-12T02:17:39+00:00",
+  "ultima_avaliacao": {
+    "cycle_id": "ciclo_30",
+    "data_version": "v2",
+    "decisao": "MANTIDO",
+    "data_hora": "2026-11-26T19:01:22+00:00"
+  },
+  "historico_decisoes": [
+    {
+      "cycle_id": "ciclo_1",
+      "data_version": "v1",
+      "data_hora": "2026-11-11T11:29:18+00:00",
+      "desafiante": {
+        "algoritmo": "RandomForestRegressor",
+        "run_id": "9e21e32402134abdac2e168338ede756",
+        "val_mae": 77.77756485272602
+      },
+      "vigente_anterior": null,
+      "decisao": "PROMOVIDO",
+      "motivo": "N\u00e3o havia modelo vigente: vencedor do ciclo promovido diretamente.",
+      "melhoria": null,
+      "run_id_decisao": "7cd50b3d022a417c9dcc0ac3bd216bf6"
+    },
+    {
+      "cycle_id": "ciclo_2",
+      "data_version": "v2",
+      "data_hora": "2026-11-12T02:17:39+00:00",
+      "desafiante": {
+        "algoritmo": "RandomForestRegressor",
+        "run_id": "0d4196c461a543d2b7762e5f8c238e92",
+        "val_mae": 51.623846206117484
+      },
+      "vigente_anterior": {
+        "modelo_id": "ciclo_1__RandomForestRegressor",
+        "val_mae_no_ciclo": 97.98795056472736
+      },
+      "decisao": "PROMOVIDO",
+      "motivo": "Melhoria de 46.3641 >= limiar 0.5 (vigente=97.9880, desafiante=51.6238).",
+      "melhoria": 46.36410435860987,
+      "run_id_decisao": "9400aba6b6cb4df085a70d1a05ec28c8"
+    },
+    {
+      "cycle_id": "ciclo_3",
+      "data_version": "v2",
+      "data_hora": "2026-11-12T17:37:12+00:00",
+      "desafiante": {
+        "algoritmo": "RandomForestRegressor",
+        "run_id": "97f2a37685fd468c982bc4cfc0208a76",
+        "val_mae": 51.62384620611748
+      },
+      "vigente_anterior": {
+        "modelo_id": "ciclo_2__RandomForestRegressor",
+        "val_mae_no_ciclo": 51.623846206117484
+      },
+      "decisao": "MANTIDO",
+      "motivo": "Melhoria de 0.0000 < limiar 0.5 (vigente=51.6238, desafiante=51.6238).",
+      "melhoria": 0.0,
+      "run_id_decisao": "0ca5a12688594f05bcaa4c633ceb1cb8"
+    },
+    {
+      "cycle_id": "ciclo_4",
+      "data_version": "v2",
+      "data_hora": "2026-11-13T01:51:12+00:00",
+      "desafiante": {
+        "algoritmo": "RandomForestRegressor",
+        "run_id": "63bbfa6b84d94a9c8cdd713888bdca30",
+        "val_mae": 51.62384620611748
+      },
+      "vigente_anterior": {
+        "modelo_id": "ciclo_2__RandomForestRegressor",
+        "val_mae_no_ciclo": 51.6238462061175
+      },
+      "decisao": "MANTIDO",
+      "motivo": "Melhoria de 0.0000 < limiar 0.5 (vigente=51.6238, desafiante=51.6238).",
+      "melhoria": 2.1316282072803006e-14,
+      "run_id_decisao": "0b52a2f135114e4c92e89ffd392b4ab5"
+    },
+    {
+      "cycle_id": "ciclo_5",
+      "data_version": "v2",
+      "data_hora": "2026-11-13T17:15:05+00:00",
+      "desafiante": {
+        "algoritmo": "RandomForestRegressor",
+        "run_id": "684797da864749c38b28386e9ab43cc2",
+        "val_mae": 51.623846206117484
+      },
+      "vigente_anterior": {
+        "modelo_id": "ciclo_2__RandomForestRegressor",
+        "val_mae_no_ciclo": 51.623846206117484
+      },
+      "decisao": "MANTIDO",
+      "motivo": "Melhoria de 0.0000 < limiar 0.5 (vigente=51.6238, desafiante=51.6238).",
+      "melhoria": 0.0,
+      "run_id_decisao": "002c8f8889474557aa12428a3ef7ba6d"
+    },
+    {
+      "cycle_id": "ciclo_6",
+      "data_version": "v2",
+      "data_hora": "2026-11-14T01:28:52+00:00",
+      "desafiante": {
+        "algoritmo": "RandomForestRegressor",
+        "run_id": "4a073db1741246909802ea4bb1a1bc53",
+        "val_mae": 51.623846206117484
+      },
+      "vigente_anterior": {
+        "modelo_id": "ciclo_2__RandomForestRegressor",
+        "val_mae_no_ciclo": 51.623846206117484
+      },
+      "decisao": "MANTIDO",
+      "motivo": "Melhoria de -0.0000 < limiar 0.5 (vigente=51.6238, desafiante=51.6238).",
+      "melhoria": -1.4210854715202004e-14,
+      "run_id_decisao": "c98e6c07f87d4d9c82cce3b53ffbbe1e"
+    },
+    {
+      "cycle_id": "ciclo_7",
+      "data_version": "v2",
+      "data_hora": "2026-11-14T15:50:52+00:00",
+      "desafiante": {
+        "algoritmo": "RandomForestRegressor",
+        "run_id": "553286b0f1744137a9270b0b18f55309",
+        "val_mae": 51.6238462061175
+      },
+      "vigente_anterior": {
+        "modelo_id": "ciclo_2__RandomForestRegressor",
+        "val_mae_no_ciclo": 51.6238462061175
+      },
+      "decisao": "MANTIDO",
+      "motivo": "Melhoria de 0.0000 < limiar 0.5 (vigente=51.6238, desafiante=51.6238).",
+      "melhoria": 0.0,
+      "run_id_decisao": "d8006e2380944c9381f515e10c48514b"
+    },
+    {
+      "cycle_id": "ciclo_8",
+      "data_version": "v2",
+      "data_hora": "2026-11-15T01:02:42+00:00",
+      "desafiante": {
+        "algoritmo": "RandomForestRegressor",
+        "run_id": "c2cba03f0f054643a5291e4a41099be1",
+        "val_mae": 51.6238462061175
+      },
+      "vigente_anterior": {
+        "modelo_id": "ciclo_2__RandomForestRegressor",
+        "val_mae_no_ciclo": 51.6238462061175
+      },
+      "decisao": "MANTIDO",
+      "motivo": "Melhoria de 0.0000 < limiar 0.5 (vigente=51.6238, desafiante=51.6238).",
+      "melhoria": 0.0,
+      "run_id_decisao": "fdc3149dac26407dae222c01563438ab"
+    },
+    {
+      "cycle_id": "ciclo_9",
+      "data_version": "v2",
+      "data_hora": "2026-11-15T16:22:53+00:00",
+      "desafiante": {
+        "algoritmo": "RandomForestRegressor",
+        "run_id": "e8ee778ac7e1474b960aea94b5fb3585",
+        "val_mae": 51.6238462061175
+      },
+      "vigente_anterior": {
+        "modelo_id": "ciclo_2__RandomForestRegressor",
+        "val_mae_no_ciclo": 51.623846206117484
+      },
+      "decisao": "MANTIDO",
+      "motivo": "Melhoria de -0.0000 < limiar 0.5 (vigente=51.6238, desafiante=51.6238).",
+      "melhoria": -1.4210854715202004e-14,
+      "run_id_decisao": "4e77b40c26ea49239dc50fd54a6306c0"
+    },
+    {
+      "cycle_id": "ciclo_10",
+      "data_version": "v2",
+      "data_hora": "2026-11-16T01:02:02+00:00",
+      "desafiante": {
+        "algoritmo": "RandomForestRegressor",
+        "run_id": "10c43ac2b4ad41dd9aa5eff894835996",
+        "val_mae": 51.623846206117484
+      },
+      "vigente_anterior": {
+        "modelo_id": "ciclo_2__RandomForestRegressor",
+        "val_mae_no_ciclo": 51.623846206117484
+      },
+      "decisao": "MANTIDO",
+      "motivo": "Melhoria de 0.0000 < limiar 0.5 (vigente=51.6238, desafiante=51.6238).",
+      "melhoria": 0.0,
+      "run_id_decisao": "8bb1ca0f97054b139485fff04bf52a11"
+    },
+    {
+      "cycle_id": "ciclo_11",
+      "data_version": "v2",
+      "data_hora": "2026-11-16T19:37:04+00:00",
+      "desafiante": {
+        "algoritmo": "RandomForestRegressor",
+        "run_id": "6f098593b23843a887a88b22665e1b5e",
+        "val_mae": 51.623846206117484
+      },
+      "vigente_anterior": {
+        "modelo_id": "ciclo_2__RandomForestRegressor",
+        "val_mae_no_ciclo": 51.623846206117484
+      },
+      "decisao": "MANTIDO",
+      "motivo": "Melhoria de -0.0000 < limiar 0.5 (vigente=51.6238, desafiante=51.6238).",
+      "melhoria": -1.4210854715202004e-14,
+      "run_id_decisao": "bd6e55e1651c48b8b0179a294de963e4"
+    },
+    {
+      "cycle_id": "ciclo_12",
+      "data_version": "v2",
+      "data_hora": "2026-11-17T03:53:22+00:00",
+      "desafiante": {
+        "algoritmo": "RandomForestRegressor",
+        "run_id": "98906111d875459ca78af86cf2ad806a",
+        "val_mae": 51.623846206117484
+      },
+      "vigente_anterior": {
+        "modelo_id": "ciclo_2__RandomForestRegressor",
+        "val_mae_no_ciclo": 51.62384620611748
+      },
+      "decisao": "MANTIDO",
+      "motivo": "Melhoria de -0.0000 < limiar 0.5 (vigente=51.6238, desafiante=51.6238).",
+      "melhoria": -7.105427357601002e-15,
+      "run_id_decisao": "cd8e402572e24b21919d1629ca1198a8"
+    },
+    {
+      "cycle_id": "ciclo_13",
+      "data_version": "v2",
+      "data_hora": "2026-11-17T18:35:20+00:00",
+      "desafiante": {
+        "algoritmo": "RandomForestRegressor",
+        "run_id": "ecb8dedba09e4cd380da4a31764d4e0d",
+        "val_mae": 51.623846206117484
+      },
+      "vigente_anterior": {
+        "modelo_id": "ciclo_2__RandomForestRegressor",
+        "val_mae_no_ciclo": 51.623846206117484
+      },
+      "decisao": "MANTIDO",
+      "motivo": "Melhoria de -0.0000 < limiar 0.5 (vigente=51.6238, desafiante=51.6238).",
+      "melhoria": -1.4210854715202004e-14,
+      "run_id_decisao": "7be844019817463687204260ce381ca7"
+    },
+    {
+      "cycle_id": "ciclo_14",
+      "data_version": "v2",
+      "data_hora": "2026-11-18T02:55:48+00:00",
+      "desafiante": {
+        "algoritmo": "RandomForestRegressor",
+        "run_id": "5d97137e56504b39b6c09e3f3c5ccb7f",
+        "val_mae": 51.6238462061175
+      },
+      "vigente_anterior": {
+        "modelo_id": "ciclo_2__RandomForestRegressor",
+        "val_mae_no_ciclo": 51.6238462061175
+      },
+      "decisao": "MANTIDO",
+      "motivo": "Melhoria de 0.0000 < limiar 0.5 (vigente=51.6238, desafiante=51.6238).",
+      "melhoria": 0.0,
+      "run_id_decisao": "73ce690b462349e29372b879e39ebc7a"
+    },
+    {
+      "cycle_id": "ciclo_15",
+      "data_version": "v2",
+      "data_hora": "2026-11-18T18:03:59+00:00",
+      "desafiante": {
+        "algoritmo": "RandomForestRegressor",
+        "run_id": "4f6c1f1f406142e5bcaa27b120bfca33",
+        "val_mae": 51.623846206117484
+      },
+      "vigente_anterior": {
+        "modelo_id": "ciclo_2__RandomForestRegressor",
+        "val_mae_no_ciclo": 51.6238462061175
+      },
+      "decisao": "MANTIDO",
+      "motivo": "Melhoria de 0.0000 < limiar 0.5 (vigente=51.6238, desafiante=51.6238).",
+      "melhoria": 1.4210854715202004e-14,
+      "run_id_decisao": "94266f78bcec4d258f6e08b0aebe7bc5"
+    },
+    {
+      "cycle_id": "ciclo_16",
+      "data_version": "v2",
+      "data_hora": "2026-11-19T02:34:57+00:00",
+      "desafiante": {
+        "algoritmo": "RandomForestRegressor",
+        "run_id": "7466f5c152e34674b1790a8e6aab3428",
+        "val_mae": 51.62384620611748
+      },
+      "vigente_anterior": {
+        "modelo_id": "ciclo_2__RandomForestRegressor",
+        "val_mae_no_ciclo": 51.62384620611748
+      },
+      "decisao": "MANTIDO",
+      "motivo": "Melhoria de -0.0000 < limiar 0.5 (vigente=51.6238, desafiante=51.6238).",
+      "melhoria": -7.105427357601002e-15,
+      "run_id_decisao": "c4874d4242a744ef892905dc5a105221"
+    },
+    {
+      "cycle_id": "ciclo_17",
+      "data_version": "v2",
+      "data_hora": "2026-11-19T18:18:06+00:00",
+      "desafiante": {
+        "algoritmo": "RandomForestRegressor",
+        "run_id": "532a945c24314e8691d72aaf4199a4e9",
+        "val_mae": 51.6238462061175
+      },
+      "vigente_anterior": {
+        "modelo_id": "ciclo_2__RandomForestRegressor",
+        "val_mae_no_ciclo": 51.623846206117484
+      },
+      "decisao": "MANTIDO",
+      "motivo": "Melhoria de 0.0000 < limiar 0.5 (vigente=51.6238, desafiante=51.6238).",
+      "melhoria": 7.105427357601002e-15,
+      "run_id_decisao": "c82dea8e3ba5438d841b71d144b17b11"
+    },
+    {
+      "cycle_id": "ciclo_18",
+      "data_version": "v2",
+      "data_hora": "2026-11-20T02:20:19+00:00",
+      "desafiante": {
+        "algoritmo": "RandomForestRegressor",
+        "run_id": "b642ac895bb74525a9465683fd8594c6",
+        "val_mae": 51.623846206117484
+      },
+      "vigente_anterior": {
+        "modelo_id": "ciclo_2__RandomForestRegressor",
+        "val_mae_no_ciclo": 51.6238462061175
+      },
+      "decisao": "MANTIDO",
+      "motivo": "Melhoria de 0.0000 < limiar 0.5 (vigente=51.6238, desafiante=51.6238).",
+      "melhoria": 1.4210854715202004e-14,
+      "run_id_decisao": "fd4b5dfe19e7427aa3ba1ebcc67fe24b"
+    },
+    {
+      "cycle_id": "ciclo_19",
+      "data_version": "v2",
+      "data_hora": "2026-11-20T17:49:15+00:00",
+      "desafiante": {
+        "algoritmo": "RandomForestRegressor",
+        "run_id": "0b04ba128701413f996fdbd979bfbc64",
+        "val_mae": 51.623846206117484
+      },
+      "vigente_anterior": {
+        "modelo_id": "ciclo_2__RandomForestRegressor",
+        "val_mae_no_ciclo": 51.623846206117484
+      },
+      "decisao": "MANTIDO",
+      "motivo": "Melhoria de 0.0000 < limiar 0.5 (vigente=51.6238, desafiante=51.6238).",
+      "melhoria": 0.0,
+      "run_id_decisao": "586eb849f7a04156a8f325ca93be658e"
+    },
+    {
+      "cycle_id": "ciclo_20",
+      "data_version": "v2",
+      "data_hora": "2026-11-21T02:14:31+00:00",
+      "desafiante": {
+        "algoritmo": "RandomForestRegressor",
+        "run_id": "8e83d6ab25f94c50bdc4ef89c78f8c4b",
+        "val_mae": 51.623846206117484
+      },
+      "vigente_anterior": {
+        "modelo_id": "ciclo_2__RandomForestRegressor",
+        "val_mae_no_ciclo": 51.62384620611748
+      },
+      "decisao": "MANTIDO",
+      "motivo": "Melhoria de -0.0000 < limiar 0.5 (vigente=51.6238, desafiante=51.6238).",
+      "melhoria": -7.105427357601002e-15,
+      "run_id_decisao": "c6e2b6d36bdd44a98f6d3c16bda295eb"
+    },
+    {
+      "cycle_id": "ciclo_21",
+      "data_version": "v2",
+      "data_hora": "2026-11-21T16:48:06+00:00",
+      "desafiante": {
+        "algoritmo": "RandomForestRegressor",
+        "run_id": "b0c4a77ec9d14a72bd007eaea5afd2d7",
+        "val_mae": 51.6238462061175
+      },
+      "vigente_anterior": {
+        "modelo_id": "ciclo_2__RandomForestRegressor",
+        "val_mae_no_ciclo": 51.623846206117484
+      },
+      "decisao": "MANTIDO",
+      "motivo": "Melhoria de 0.0000 < limiar 0.5 (vigente=51.6238, desafiante=51.6238).",
+      "melhoria": 0.0,
+      "run_id_decisao": "f44c424d2d2c4e32b243c7d6cb058192"
+    },
+    {
+      "cycle_id": "ciclo_22",
+      "data_version": "v2",
+      "data_hora": "2026-11-22T01:18:43+00:00",
+      "desafiante": {
+        "algoritmo": "RandomForestRegressor",
+        "run_id": "40fa07ab7b4f4f1699429bf2b330ce68",
+        "val_mae": 51.6238462061175
+      },
+      "vigente_anterior": {
+        "modelo_id": "ciclo_2__RandomForestRegressor",
+        "val_mae_no_ciclo": 51.623846206117484
+      },
+      "decisao": "MANTIDO",
+      "motivo": "Melhoria de -0.0000 < limiar 0.5 (vigente=51.6238, desafiante=51.6238).",
+      "melhoria": -1.4210854715202004e-14,
+      "run_id_decisao": "a2063e9cb69544c1bf47789d5ebdce29"
+    },
+    {
+      "cycle_id": "ciclo_23",
+      "data_version": "v2",
+      "data_hora": "2026-11-22T17:10:41+00:00",
+      "desafiante": {
+        "algoritmo": "RandomForestRegressor",
+        "run_id": "cad6038f12d14023b6143df496ca478a",
+        "val_mae": 51.623846206117484
+      },
+      "vigente_anterior": {
+        "modelo_id": "ciclo_2__RandomForestRegressor",
+        "val_mae_no_ciclo": 51.623846206117484
+      },
+      "decisao": "MANTIDO",
+      "motivo": "Melhoria de 0.0000 < limiar 0.5 (vigente=51.6238, desafiante=51.6238).",
+      "melhoria": 0.0,
+      "run_id_decisao": "7317a6a897124b3ebc9b8879eca3f88e"
+    },
+    {
+      "cycle_id": "ciclo_24",
+      "data_version": "v2",
+      "data_hora": "2026-11-23T01:42:32+00:00",
+      "desafiante": {
+        "algoritmo": "RandomForestRegressor",
+        "run_id": "befed90695ee477cb65aa877afdd1efd",
+        "val_mae": 51.6238462061175
+      },
+      "vigente_anterior": {
+        "modelo_id": "ciclo_2__RandomForestRegressor",
+        "val_mae_no_ciclo": 51.623846206117484
+      },
+      "decisao": "MANTIDO",
+      "motivo": "Melhoria de -0.0000 < limiar 0.5 (vigente=51.6238, desafiante=51.6238).",
+      "melhoria": -1.4210854715202004e-14,
+      "run_id_decisao": "edc8aee8c10a4c2fb53cfe1f7bbafa48"
+    },
+    {
+      "cycle_id": "ciclo_25",
+      "data_version": "v2",
+      "data_hora": "2026-11-23T21:22:40+00:00",
+      "desafiante": {
+        "algoritmo": "RandomForestRegressor",
+        "run_id": "67a30f3e6bda4bb2901591c052dff7a0",
+        "val_mae": 51.6238462061175
+      },
+      "vigente_anterior": {
+        "modelo_id": "ciclo_2__RandomForestRegressor",
+        "val_mae_no_ciclo": 51.623846206117484
+      },
+      "decisao": "MANTIDO",
+      "motivo": "Melhoria de 0.0000 < limiar 0.5 (vigente=51.6238, desafiante=51.6238).",
+      "melhoria": 0.0,
+      "run_id_decisao": "f463debecc584f88b4b8b8863f5eecc9"
+    },
+    {
+      "cycle_id": "ciclo_26",
+      "data_version": "v2",
+      "data_hora": "2026-11-24T20:10:40+00:00",
+      "desafiante": {
+        "algoritmo": "RandomForestRegressor",
+        "run_id": "9d937e3e4b1a467687b9f6debbb11704",
+        "val_mae": 51.6238462061175
+      },
+      "vigente_anterior": {
+        "modelo_id": "ciclo_2__RandomForestRegressor",
+        "val_mae_no_ciclo": 51.623846206117484
+      },
+      "decisao": "MANTIDO",
+      "motivo": "Melhoria de -0.0000 < limiar 0.5 (vigente=51.6238, desafiante=51.6238).",
+      "melhoria": -1.4210854715202004e-14,
+      "run_id_decisao": "0b7c816f4fee4369b9d4c5621533be2a"
+    },
+    {
+      "cycle_id": "ciclo_27",
+      "data_version": "v2",
+      "data_hora": "2026-11-25T04:13:39+00:00",
+      "desafiante": {
+        "algoritmo": "RandomForestRegressor",
+        "run_id": "cb8155509a394fe18dc5975211d5d6e9",
+        "val_mae": 51.6238462061175
+      },
+      "vigente_anterior": {
+        "modelo_id": "ciclo_2__RandomForestRegressor",
+        "val_mae_no_ciclo": 51.6238462061175
+      },
+      "decisao": "MANTIDO",
+      "motivo": "Melhoria de 0.0000 < limiar 0.5 (vigente=51.6238, desafiante=51.6238).",
+      "melhoria": 1.4210854715202004e-14,
+      "run_id_decisao": "df8f4deb88ae491ab161b873f5ad43be"
+    },
+    {
+      "cycle_id": "ciclo_28",
+      "data_version": "v2",
+      "data_hora": "2026-11-25T19:16:35+00:00",
+      "desafiante": {
+        "algoritmo": "RandomForestRegressor",
+        "run_id": "a6824509d48a41ef9296e1e0fb900bb9",
+        "val_mae": 51.623846206117484
+      },
+      "vigente_anterior": {
+        "modelo_id": "ciclo_2__RandomForestRegressor",
+        "val_mae_no_ciclo": 51.62384620611748
+      },
+      "decisao": "MANTIDO",
+      "motivo": "Melhoria de 0.0000 < limiar 0.5 (vigente=51.6238, desafiante=51.6238).",
+      "melhoria": 0.0,
+      "run_id_decisao": "4f4d518a467746ddaa561404e1692fea"
+    },
+    {
+      "cycle_id": "ciclo_29",
+      "data_version": "v2",
+      "data_hora": "2026-11-26T03:35:02+00:00",
+      "desafiante": {
+        "algoritmo": "RandomForestRegressor",
+        "run_id": "59400aa983c6495abc8ad7d2ce7da049",
+        "val_mae": 51.62384620611748
+      },
+      "vigente_anterior": {
+        "modelo_id": "ciclo_2__RandomForestRegressor",
+        "val_mae_no_ciclo": 51.6238462061175
+      },
+      "decisao": "MANTIDO",
+      "motivo": "Melhoria de 0.0000 < limiar 0.5 (vigente=51.6238, desafiante=51.6238).",
+      "melhoria": 1.4210854715202004e-14,
+      "run_id_decisao": "b636efab063e4fa9ba9a4c5c037f102e"
+    },
+    {
+      "cycle_id": "ciclo_30",
+      "data_version": "v2",
+      "data_hora": "2026-11-26T19:01:22+00:00",
+      "desafiante": {
+        "algoritmo": "RandomForestRegressor",
+        "run_id": "e9340995500e4f379a71ff2535b8811e",
+        "val_mae": 51.62384620611748
+      },
+      "vigente_anterior": {
+        "modelo_id": "ciclo_2__RandomForestRegressor",
+        "val_mae_no_ciclo": 51.623846206117484
+      },
+      "decisao": "MANTIDO",
+      "motivo": "Melhoria de -0.0000 < limiar 0.5 (vigente=51.6238, desafiante=51.6238).",
+      "melhoria": -1.4210854715202004e-14,
+      "run_id_decisao": "055df63a4766495291d58c86a101fefc"
+    }
+  ]
+}
